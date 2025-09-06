@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dpfqx0hixvpwx"]
+
+[ext_resource type="FontFile" uid="uid://cqt8es7yh30td" path="res://fonts/farsi-fonts/A.Shekari.(farsgraphic.com).ttf" id="1_7d32r"]
+
+[resource]
+line_spacing = 2.0
+font = ExtResource("1_7d32r")
+font_size = 30
+font_color = Color(0, 0, 0, 1)

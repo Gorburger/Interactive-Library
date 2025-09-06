@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ccnvly0w3qkwv"]
+
+[ext_resource type="FontFile" uid="uid://b4ve5foioum7r" path="res://fonts/farsi-fonts/Digi Maryam Regular.ttf" id="1_hafvi"]
+
+[resource]
+font = ExtResource("1_hafvi")
+font_size = 22
+font_color = Color(0, 0, 0, 1)

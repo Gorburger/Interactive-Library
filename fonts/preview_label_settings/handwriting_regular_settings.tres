@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bem5e4kcayltd"]
+
+[ext_resource type="FontFile" uid="uid://1ha6mgpbrjc8" path="res://fonts/Handwriting-Regular.otf" id="1_12ygg"]
+
+[resource]
+font = ExtResource("1_12ygg")
+font_size = 33
+font_color = Color(0, 0, 0, 1)

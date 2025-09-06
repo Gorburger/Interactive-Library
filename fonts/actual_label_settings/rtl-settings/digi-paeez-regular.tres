@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://t1cagsf0104"]
+
+[ext_resource type="FontFile" uid="uid://b6lpkqs13tjk1" path="res://fonts/farsi-fonts/Digi Paeez Regular.otf" id="1_i48o7"]
+
+[resource]
+line_spacing = 2.0
+font = ExtResource("1_i48o7")
+font_size = 28
+font_color = Color(0, 0, 0, 1)

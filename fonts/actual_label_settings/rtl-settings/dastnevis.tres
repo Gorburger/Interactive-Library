@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dkvsflwrnnk3h"]
+
+[ext_resource type="FontFile" uid="uid://bih8yq736hip2" path="res://fonts/farsi-fonts/danstnevis.otf" id="1_xwoxp"]
+
+[resource]
+line_spacing = 2.0
+font = ExtResource("1_xwoxp")
+font_size = 31
+font_color = Color(0, 0, 0, 1)

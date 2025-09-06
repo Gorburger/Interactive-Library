@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ckoarmmrvygd0"]
+
+[ext_resource type="FontFile" uid="uid://cj6rd0d0icduo" path="res://fonts/Water Lemon.otf" id="1_f2sla"]
+
+[resource]
+font = ExtResource("1_f2sla")
+font_size = 23
+font_color = Color(0, 0, 0, 1)

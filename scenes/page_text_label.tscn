@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2jrbtwqaw3pv"]
+
+[ext_resource type="FontFile" uid="uid://bouq5g1cq7rnq" path="res://fonts/Vividly-Regular.ttf" id="1_svrc5"]
+
+[node name="PageTextLabel" type="Label"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 190.0
+offset_top = 95.0
+offset_right = -578.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_svrc5")
+theme_override_font_sizes/font_size = 41
+autowrap_mode = 3
+max_lines_visible = 13

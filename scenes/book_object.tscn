@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://hb68yrblcx5v"]
+
+[ext_resource type="Script" uid="uid://w5m4epgabi5i" path="res://scripts/book_object.gd" id="1_imnru"]
+[ext_resource type="Texture2D" uid="uid://p2u35ssytcl1" path="res://textures/book_template.png" id="2_evqrv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjt8n"]
+size = Vector2(40, 95)
+
+[node name="book_object" type="Area2D"]
+collision_mask = 0
+script = ExtResource("1_imnru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xjt8n")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_evqrv")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://coe0cbacva4gq"]
+
+[ext_resource type="FontFile" uid="uid://cpd632jy0spr3" path="res://fonts/Papernotes.otf" id="1_34u8u"]
+
+[resource]
+font = ExtResource("1_34u8u")
+font_size = 28
+font_color = Color(0, 0, 0, 1)

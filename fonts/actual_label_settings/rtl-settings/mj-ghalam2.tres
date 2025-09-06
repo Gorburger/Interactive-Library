@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://2wc2hyhl6mds"]
+
+[ext_resource type="FontFile" uid="uid://bxjruc3h3awsg" path="res://fonts/farsi-fonts/Mj.Ghalam.2.(farsgraphic.com).ttf" id="1_r455p"]
+
+[resource]
+line_spacing = 2.0
+font = ExtResource("1_r455p")
+font_size = 31
+font_color = Color(0, 0, 0, 1)

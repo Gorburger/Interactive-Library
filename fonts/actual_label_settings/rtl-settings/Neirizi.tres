@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://csiw3gn0i5lo0"]
+
+[ext_resource type="FontFile" uid="uid://dq81cxkgknqok" path="res://fonts/farsi-fonts/Neirizi.ttf" id="1_p5sx7"]
+
+[resource]
+line_spacing = 2.0
+font = ExtResource("1_p5sx7")
+font_size = 14
+font_color = Color(0, 0, 0, 1)

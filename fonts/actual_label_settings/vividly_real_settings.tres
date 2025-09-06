@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://wdb7v3d645kk"]
+
+[ext_resource type="FontFile" uid="uid://bouq5g1cq7rnq" path="res://fonts/Vividly-Regular.ttf" id="1_q611t"]
+
+[resource]
+font = ExtResource("1_q611t")
+font_size = 41
+font_color = Color(0, 0, 0, 1)

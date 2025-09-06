@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d3mqsp4qt8j5o"]
+
+[ext_resource type="FontFile" uid="uid://cwjb0jpygt54s" path="res://fonts/FreshBaked.otf" id="1_s6tke"]
+
+[resource]
+font = ExtResource("1_s6tke")
+font_size = 27
+font_color = Color(0, 0, 0, 1)

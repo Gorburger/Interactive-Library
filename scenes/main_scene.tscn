@@ -1,0 +1,952 @@
+[gd_scene load_steps=61 format=3 uid="uid://ck3feym3k3ndj"]
+
+[ext_resource type="Script" uid="uid://br2yxy2cg5d6f" path="res://scripts/main_script.gd" id="1_rt2n2"]
+[ext_resource type="AudioStream" uid="uid://3dlficwkxcyq" path="res://audio/next_page_sound.mp3" id="2_02d50"]
+[ext_resource type="PackedScene" uid="uid://qvl5yiqrxqke" path="res://scenes/drop_zone.tscn" id="2_7ykc4"]
+[ext_resource type="Texture2D" uid="uid://d1n7t8l2xdcq1" path="res://textures/background.png" id="2_18nlu"]
+[ext_resource type="Texture2D" uid="uid://bfvc3hjgsevo8" path="res://textures/bookshelf.png" id="3_7ykc4"]
+[ext_resource type="AudioStream" uid="uid://bukvtavb6eltg" path="res://audio/last_page_sound.mp3" id="3_pgk25"]
+[ext_resource type="AudioStream" uid="uid://dtpyfpcocrc2g" path="res://audio/closing_book_sound.mp3" id="4_kkokr"]
+[ext_resource type="AudioStream" uid="uid://dnebv2l5sop05" path="res://audio/opening_book_sound.mp3" id="5_lhwp2"]
+[ext_resource type="AudioStream" uid="uid://7wf234r5moe1" path="res://audio/grabbing_book_sound.mp3" id="6_l40q6"]
+[ext_resource type="Texture2D" uid="uid://dxxnsyqauvchm" path="res://textures/floor.png" id="7_c16ls"]
+[ext_resource type="AudioStream" uid="uid://cexfysnpihr3b" path="res://audio/select1.mp3" id="7_j4epa"]
+[ext_resource type="AudioStream" uid="uid://cjftxdwgcxyxp" path="res://audio/select2.mp3" id="8_ruju6"]
+[ext_resource type="AudioStream" uid="uid://clvvp0dnc3hrf" path="res://audio/select3.mp3" id="9_5nybl"]
+[ext_resource type="PackedScene" uid="uid://clsjgefqgpy3p" path="res://scenes/trashbin.tscn" id="10_pgk25"]
+[ext_resource type="FontFile" uid="uid://bouq5g1cq7rnq" path="res://fonts/Vividly-Regular.ttf" id="12_86meh"]
+[ext_resource type="Texture2D" uid="uid://dgmsxncssk1ay" path="res://textures/animations/plus_button_pressed.png" id="13_beobj"]
+[ext_resource type="Texture2D" uid="uid://7d4w02vukoam" path="res://textures/book_cover_template.png" id="13_k3g67"]
+[ext_resource type="Texture2D" uid="uid://q4o032t734x1" path="res://textures/animations/last_page_animation1.png" id="14_k67gn"]
+[ext_resource type="Texture2D" uid="uid://bibnj0m0fgqmn" path="res://textures/animations/last_page_animation2.png" id="15_k3g67"]
+[ext_resource type="Texture2D" uid="uid://dx6w517uka3ff" path="res://textures/animations/last_page_animation3.png" id="16_4bgka"]
+[ext_resource type="Texture2D" uid="uid://bcr7sf6s0uhuf" path="res://textures/animations/last_page_animation4.png" id="17_02d50"]
+[ext_resource type="Texture2D" uid="uid://b0qya742tjrge" path="res://textures/animations/last_page_animation5.png" id="18_pgk25"]
+[ext_resource type="Texture2D" uid="uid://doauaecwrpp14" path="res://textures/animations/last_page_animation6.png" id="19_kkokr"]
+[ext_resource type="Texture2D" uid="uid://cbjhjw5y16jjj" path="res://textures/animations/last_page_animation7.png" id="20_lhwp2"]
+[ext_resource type="Texture2D" uid="uid://drdhnm3y8ubuh" path="res://textures/animations/next_page_animation1.png" id="21_l40q6"]
+[ext_resource type="Texture2D" uid="uid://lgxn4ulk8thk" path="res://textures/animations/next_page_animation2.png" id="22_iav3h"]
+[ext_resource type="Texture2D" uid="uid://dmmv5m100bgl4" path="res://textures/animations/next_page_animation3.png" id="23_womr8"]
+[ext_resource type="Texture2D" uid="uid://bhqwcs3bkxas1" path="res://textures/animations/next_page_animation4.png" id="24_onjth"]
+[ext_resource type="Texture2D" uid="uid://doq5grh0o0mma" path="res://textures/animations/next_page_animation5.png" id="25_xa0eo"]
+[ext_resource type="Texture2D" uid="uid://bri5kvyubylgg" path="res://textures/animations/next_page_animation6.png" id="26_3mjum"]
+[ext_resource type="Texture2D" uid="uid://dc1augfk0igio" path="res://textures/animations/next_page_animation7.png" id="27_p27gv"]
+[ext_resource type="Texture2D" uid="uid://p2u35ssytcl1" path="res://textures/book_template.png" id="29_02d50"]
+[ext_resource type="Texture2D" uid="uid://betxtowojf6sk" path="res://textures/open_book_template.png" id="30_pgk25"]
+[ext_resource type="LabelSettings" uid="uid://gq6s2pomvtad" path="res://fonts/preview_label_settings/vividly_regular_settings.tres" id="30_womr8"]
+[ext_resource type="Texture2D" uid="uid://csg0mpj10qx8g" path="res://textures/book_template2.png" id="30_xa0eo"]
+[ext_resource type="Texture2D" uid="uid://dcvukeshui22b" path="res://textures/right_arrow.png" id="31_3mjum"]
+[ext_resource type="Texture2D" uid="uid://kjaby5a5bst2" path="res://textures/book_template3.png" id="31_p27gv"]
+[ext_resource type="Texture2D" uid="uid://deq2h6fdrg4fk" path="res://textures/animations/plus_button_icon.png" id="31_pgk25"]
+[ext_resource type="Texture2D" uid="uid://bc73urw8ao26e" path="res://textures/book_template4.png" id="32_cn4eu"]
+[ext_resource type="Texture2D" uid="uid://cqepej7h2nk58" path="res://textures/animations/close_button.png" id="32_iav3h"]
+[ext_resource type="Texture2D" uid="uid://bh1khvd40cwtn" path="res://textures/animations/checkmark_button.png" id="32_kkokr"]
+[ext_resource type="Texture2D" uid="uid://hxcereaq4rcm" path="res://textures/teal_rectangle.png" id="32_l40q6"]
+[ext_resource type="Texture2D" uid="uid://bfokydg1it842" path="res://textures/pen.png" id="32_lhwp2"]
+[ext_resource type="Texture2D" uid="uid://c3165axq0nb4w" path="res://textures/down_arrow.png" id="33_l40q6"]
+[ext_resource type="Texture2D" uid="uid://drei44jmww7ni" path="res://textures/book_template5.png" id="34_267kh"]
+[ext_resource type="Texture2D" uid="uid://b71lih8vert32" path="res://textures/folder.png" id="35_xp01v"]
+[ext_resource type="Texture2D" uid="uid://rsj66ysrjgi1" path="res://textures/animations/checkmark_button_pressed.png" id="37_jix7a"]
+[ext_resource type="Texture2D" uid="uid://bpx4mwg8olg8w" path="res://textures/disabled_arrow.png" id="39_3mjum"]
+[ext_resource type="Texture2D" uid="uid://318uvqo2ynye" path="res://textures/animations/close_button_pressed.png" id="39_segjr"]
+[ext_resource type="Texture2D" uid="uid://dlaieygw6qi81" path="res://textures/pressed_arrow.png" id="41_0wyf6"]
+[ext_resource type="Texture2D" uid="uid://b3sw1wtj281sk" path="res://textures/green_rectangle.png" id="43_duuju"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k67gn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_k67gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_k3g67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4bgka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_02d50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pgk25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kkokr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lhwp2")
+}, {
+"duration": 0.1,
+"texture": ExtResource("14_k67gn")
+}],
+"loop": false,
+"name": &"lastPage",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_l40q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_iav3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_womr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_onjth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xa0eo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3mjum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_p27gv")
+}, {
+"duration": 0.1,
+"texture": ExtResource("21_l40q6")
+}],
+"loop": false,
+"name": &"nextPage",
+"speed": 15.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_duuju"]
+texture = ExtResource("43_duuju")
+region_rect = Rect2(0.791981, 0, 18.4167, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4epa"]
+texture = ExtResource("32_l40q6")
+region_rect = Rect2(0.791981, 0, 18.4167, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iav3h"]
+texture = ExtResource("32_l40q6")
+region_rect = Rect2(0.791981, 0, 18.4167, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ruju6"]
+texture = ExtResource("32_l40q6")
+
+[sub_resource type="Theme" id="Theme_iav3h"]
+OptionButton/font_sizes/font_size = 25
+OptionButton/fonts/font = ExtResource("12_86meh")
+OptionButton/styles/disabled = SubResource("StyleBoxTexture_duuju")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_j4epa")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxTexture_iav3h")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_iav3h")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_iav3h")
+PopupMenu/colors/font_outline_color = Color(0.427451, 0.427451, 0.427451, 1)
+PopupMenu/constants/outline_size = 4
+PopupMenu/font_sizes/font_size = 29
+PopupMenu/fonts/font = ExtResource("12_86meh")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_ruju6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dxha"]
+texture = ExtResource("43_duuju")
+region_rect = Rect2(0.791981, 0, 18.4167, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l40q6"]
+texture = ExtResource("43_duuju")
+
+[sub_resource type="Theme" id="Theme_j4epa"]
+OptionButton/font_sizes/font_size = 25
+OptionButton/fonts/font = ExtResource("12_86meh")
+OptionButton/styles/disabled = SubResource("StyleBoxTexture_8dxha")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_8dxha")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxTexture_8dxha")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_8dxha")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_8dxha")
+PopupMenu/colors/font_outline_color = Color(0.427451, 0.427451, 0.427451, 1)
+PopupMenu/constants/outline_size = 4
+PopupMenu/font_sizes/font_size = 29
+PopupMenu/fonts/font = ExtResource("12_86meh")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_l40q6")
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_rt2n2")
+
+[node name="soundeffects" type="Node" parent="."]
+
+[node name="next_page_sound" type="AudioStreamPlayer" parent="soundeffects"]
+stream = ExtResource("2_02d50")
+
+[node name="last_page_sound" type="AudioStreamPlayer" parent="soundeffects"]
+stream = ExtResource("3_pgk25")
+
+[node name="closing_sound" type="AudioStreamPlayer" parent="soundeffects"]
+stream = ExtResource("4_kkokr")
+
+[node name="opening_sound" type="AudioStreamPlayer" parent="soundeffects"]
+stream = ExtResource("5_lhwp2")
+
+[node name="grabbing_sound" type="AudioStreamPlayer" parent="soundeffects"]
+stream = ExtResource("6_l40q6")
+
+[node name="select_sound1" type="AudioStreamPlayer" parent="soundeffects"]
+stream = ExtResource("7_j4epa")
+
+[node name="select_sound2" type="AudioStreamPlayer" parent="soundeffects"]
+stream = ExtResource("8_ruju6")
+
+[node name="select_sound3" type="AudioStreamPlayer" parent="soundeffects"]
+stream = ExtResource("9_5nybl")
+volume_db = -12.0
+max_polyphony = 3
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 302.5)
+texture = ExtResource("2_18nlu")
+
+[node name="floor" type="Sprite2D" parent="."]
+position = Vector2(576, 626.5)
+texture = ExtResource("7_c16ls")
+
+[node name="bookshelf" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -312.0
+offset_top = -628.0
+offset_right = 312.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_7ykc4")
+stretch_mode = 2
+
+[node name="shelves" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 342.0
+offset_top = 104.0
+offset_right = -282.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="shelves"]
+custom_minimum_size = Vector2(0, 104)
+layout_mode = 2
+
+[node name="drop_zone" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone2" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone3" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone4" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone5" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone6" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone7" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone8" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone9" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone10" parent="shelves/HBoxContainer" instance=ExtResource("2_7ykc4")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="shelves"]
+custom_minimum_size = Vector2(0, 104)
+layout_mode = 2
+
+[node name="drop_zone" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone2" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone3" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone4" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone5" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone6" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone7" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone8" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone9" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone10" parent="shelves/HBoxContainer2" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="shelves"]
+custom_minimum_size = Vector2(0, 104)
+layout_mode = 2
+
+[node name="drop_zone" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone2" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone3" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone4" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone5" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone6" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone7" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone8" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone9" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone10" parent="shelves/HBoxContainer3" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="shelves"]
+custom_minimum_size = Vector2(0, 104)
+layout_mode = 2
+
+[node name="drop_zone" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone2" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone3" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone4" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone5" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone6" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone7" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone8" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone9" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone10" parent="shelves/HBoxContainer4" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="shelves"]
+custom_minimum_size = Vector2(0, 95)
+layout_mode = 2
+
+[node name="drop_zone" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone2" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone3" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone4" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone5" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone6" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone7" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone8" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone9" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="drop_zone10" parent="shelves/HBoxContainer5" instance=ExtResource("2_7ykc4")]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="trashbin" parent="." instance=ExtResource("10_pgk25")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.855035
+anchor_top = 0.834876
+anchor_right = 0.855035
+anchor_bottom = 0.834876
+offset_top = 0.5
+offset_bottom = 0.5
+
+[node name="Books" type="Node2D" parent="."]
+
+[node name="BookLayer" type="CanvasLayer" parent="."]
+
+[node name="buttonText" type="Label" parent="BookLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = -95.0
+offset_right = 138.0
+offset_bottom = -72.0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0.223529, 0.203922, 0.172549, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("12_86meh")
+theme_override_font_sizes/font_size = 26
+text = "Add Book"
+
+[node name="AddBookButton" type="TextureButton" parent="BookLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -103.0
+offset_right = 45.0
+offset_bottom = -71.0
+grow_vertical = 0
+texture_normal = ExtResource("31_pgk25")
+texture_pressed = ExtResource("13_beobj")
+
+[node name="darkBackground" type="ColorRect" parent="BookLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.686275)
+
+[node name="InteractionBlocker" type="ColorRect" parent="BookLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="OpenBook" type="Control" parent="BookLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CoverTexture" type="TextureRect" parent="BookLayer/OpenBook"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_k3g67")
+
+[node name="PagesAnimation" type="AnimatedSprite2D" parent="BookLayer/OpenBook"]
+position = Vector2(579, 296.5)
+sprite_frames = SubResource("SpriteFrames_k67gn")
+animation = &"nextPage"
+
+[node name="preview_label" type="Label" parent="BookLayer/OpenBook"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = 95.0
+offset_right = -1220.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 2
+autowrap_mode = 3
+max_lines_visible = 13
+
+[node name="CreateBook" type="Control" parent="BookLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="cover_templates" type="Control" parent="BookLayer/CreateBook"]
+anchors_preset = 0
+offset_left = 27.0
+offset_top = 83.0
+offset_right = 127.0
+offset_bottom = 417.0
+
+[node name="template1" type="TextureRect" parent="BookLayer/CreateBook/cover_templates"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 67.0
+offset_bottom = 222.0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("29_02d50")
+expand_mode = 5
+
+[node name="template2" type="TextureRect" parent="BookLayer/CreateBook/cover_templates"]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 67.0
+offset_bottom = 222.0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("30_xa0eo")
+expand_mode = 5
+
+[node name="template3" type="TextureRect" parent="BookLayer/CreateBook/cover_templates"]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 67.0
+offset_bottom = 222.0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("31_p27gv")
+expand_mode = 5
+
+[node name="template4" type="TextureRect" parent="BookLayer/CreateBook/cover_templates"]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 67.0
+offset_bottom = 222.0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("32_cn4eu")
+expand_mode = 5
+
+[node name="template5" type="TextureRect" parent="BookLayer/CreateBook/cover_templates"]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 67.0
+offset_bottom = 222.0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("34_267kh")
+expand_mode = 5
+
+[node name="ColorPicker" type="ColorPicker" parent="BookLayer/CreateBook"]
+layout_mode = 0
+offset_left = 885.0
+offset_top = 132.0
+offset_right = 1149.0
+offset_bottom = 396.0
+mouse_filter = 2
+color = Color(0.5275, 1, 0.19, 1)
+picker_shape = 1
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
+
+[node name="CoverPreview" type="TextureRect" parent="BookLayer/CreateBook"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -552.0
+offset_top = -365.0
+offset_right = 600.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.85, 0.85)
+mouse_filter = 2
+texture = ExtResource("13_k3g67")
+metadata/_edit_lock_ = true
+
+[node name="openPages" type="TextureRect" parent="BookLayer/CreateBook"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -330.0
+offset_right = 516.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.85, 0.85)
+mouse_filter = 2
+texture = ExtResource("30_pgk25")
+metadata/_edit_lock_ = true
+
+[node name="left_placeholder" type="Label" parent="BookLayer/CreateBook"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 183.0
+offset_top = 43.0
+offset_right = -630.0
+offset_bottom = -207.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
+label_settings = ExtResource("30_womr8")
+autowrap_mode = 3
+max_lines_visible = 13
+
+[node name="right_placeholder" type="Label" parent="BookLayer/CreateBook"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 526.0
+offset_top = 43.0
+offset_right = -284.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
+label_settings = ExtResource("30_womr8")
+autowrap_mode = 3
+lines_skipped = 13
+max_lines_visible = 13
+
+[node name="buttonText" type="Label" parent="BookLayer/CreateBook"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 122.0
+offset_top = 142.0
+offset_right = 250.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.34902, 0.337255, 0.321569, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_86meh")
+theme_override_font_sizes/font_size = 43
+text = "content:"
+horizontal_alignment = 2
+
+[node name="LocateFileButton" type="TextureButton" parent="BookLayer/CreateBook"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 260.0
+offset_top = -189.0
+offset_right = 324.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("35_xp01v")
+
+[node name="DoneButton" type="TextureButton" parent="BookLayer/CreateBook"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -99.0
+offset_right = -16.0
+offset_bottom = -51.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("32_kkokr")
+texture_pressed = ExtResource("37_jix7a")
+stretch_mode = 3
+
+[node name="CloseButton" type="TextureButton" parent="BookLayer/CreateBook"]
+layout_mode = 1
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 55.0
+offset_bottom = 55.0
+texture_normal = ExtResource("32_iav3h")
+texture_pressed = ExtResource("39_segjr")
+
+[node name="LTRoptions" type="OptionButton" parent="BookLayer/CreateBook"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -182.0
+offset_right = 66.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme = SubResource("Theme_iav3h")
+theme_override_colors/font_outline_color = Color(0.427451, 0.427451, 0.427451, 1)
+theme_override_constants/outline_size = 8
+theme_override_icons/icon = ExtResource("32_lhwp2")
+theme_override_constants/arrow_margin = 10
+theme_override_icons/arrow = ExtResource("33_l40q6")
+selected = 0
+item_count = 7
+popup/item_0/text = "Vividly Regular"
+popup/item_0/id = 0
+popup/item_1/text = "Fresh Baked"
+popup/item_1/id = 1
+popup/item_2/text = "Papernotes"
+popup/item_2/id = 2
+popup/item_3/text = "Trash Hand"
+popup/item_3/id = 3
+popup/item_4/text = "Simple Handmade"
+popup/item_4/id = 4
+popup/item_5/text = "Handwriting Regular"
+popup/item_5/id = 5
+popup/item_6/text = "Water Lemon"
+popup/item_6/id = 6
+
+[node name="RTLoptions" type="OptionButton" parent="BookLayer/CreateBook"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -182.0
+offset_right = 66.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme = SubResource("Theme_j4epa")
+theme_override_colors/font_outline_color = Color(0.427451, 0.427451, 0.427451, 1)
+theme_override_constants/outline_size = 8
+theme_override_icons/icon = ExtResource("32_lhwp2")
+theme_override_constants/arrow_margin = 10
+theme_override_icons/arrow = ExtResource("33_l40q6")
+selected = 0
+item_count = 7
+popup/item_0/text = "Phalls Khodkar"
+popup/item_0/id = 0
+popup/item_1/text = "Neirizi"
+popup/item_1/id = 1
+popup/item_2/text = "A Shekari"
+popup/item_2/id = 2
+popup/item_3/text = "Dastnevis"
+popup/item_3/id = 3
+popup/item_4/text = "Mj Ghalam2"
+popup/item_4/id = 4
+popup/item_5/text = "Digi Paeez Regular"
+popup/item_5/id = 5
+popup/item_6/text = "Digi Maryam Regular"
+popup/item_6/id = 6
+
+[node name="next_button" type="TextureButton" parent="BookLayer/CreateBook"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 425.0
+offset_right = 115.0
+offset_bottom = 465.0
+texture_normal = ExtResource("31_3mjum")
+texture_pressed = ExtResource("41_0wyf6")
+texture_disabled = ExtResource("39_3mjum")
+
+[node name="last_button" type="TextureButton" parent="BookLayer/CreateBook"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 425.0
+offset_right = 65.0
+offset_bottom = 465.0
+disabled = true
+texture_normal = ExtResource("31_3mjum")
+texture_pressed = ExtResource("41_0wyf6")
+texture_disabled = ExtResource("39_3mjum")
+flip_h = true
+
+[node name="rtl_on_button" type="CheckButton" parent="BookLayer/CreateBook"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -343.0
+offset_top = -182.0
+offset_right = -255.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0.34902, 0.337255, 0.321569, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("12_86meh")
+theme_override_font_sizes/font_size = 43
+text = "rtl"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="pressed" from="BookLayer/AddBookButton" to="." method="add_book_button_pressed"]
+[connection signal="animation_finished" from="BookLayer/OpenBook/PagesAnimation" to="." method="_on_pages_animation_finished"]
+[connection signal="color_changed" from="BookLayer/CreateBook/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="pressed" from="BookLayer/CreateBook/LocateFileButton" to="." method="_on_locate_file_button_pressed"]
+[connection signal="pressed" from="BookLayer/CreateBook/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="pressed" from="BookLayer/CreateBook/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="item_selected" from="BookLayer/CreateBook/LTRoptions" to="." method="_on_font_selected"]
+[connection signal="item_selected" from="BookLayer/CreateBook/RTLoptions" to="." method="_on_rtl_font_selected"]
+[connection signal="pressed" from="BookLayer/CreateBook/next_button" to="." method="_on_next_template_pressed"]
+[connection signal="pressed" from="BookLayer/CreateBook/last_button" to="." method="_on_last_button_pressed"]
+[connection signal="toggled" from="BookLayer/CreateBook/rtl_on_button" to="." method="_on_rtl_on_button_toggled"]

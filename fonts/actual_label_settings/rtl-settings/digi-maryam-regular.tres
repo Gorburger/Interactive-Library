@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d1y3xg1ch6lg3"]
+
+[ext_resource type="FontFile" uid="uid://b4ve5foioum7r" path="res://fonts/farsi-fonts/Digi Maryam Regular.ttf" id="1_nv707"]
+
+[resource]
+line_spacing = 2.0
+font = ExtResource("1_nv707")
+font_size = 29
+font_color = Color(0, 0, 0, 1)

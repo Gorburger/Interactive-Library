@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ckogmld3jmhjn"]
+
+[ext_resource type="FontFile" uid="uid://b6lpkqs13tjk1" path="res://fonts/farsi-fonts/Digi Paeez Regular.otf" id="1_l3phr"]
+
+[resource]
+font = ExtResource("1_l3phr")
+font_size = 23
+font_color = Color(0, 0, 0, 1)
